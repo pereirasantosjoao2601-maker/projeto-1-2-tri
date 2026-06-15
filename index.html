@@ -174,4 +174,59 @@ footer {
             </div>
             <div class="card">
                 <h4>Evento de eSports anunciado</h4>
-                <p>Grandesdano o cuebaq
+                <p>Grandes torneios chegando nesta temporada.</p>
+            </div>
+            <div class="card">
+                <h4>Lançamentos da semana</h4>
+                <p>Confira os jogos que acabaram de sair.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section">
+        <h3>⭐ Reviews em destaque</h3>
+        <div class="grid">
+            <div class="card">
+                <h4>Jogo A</h4>
+                <p>Avaliação completa com pontos positivos e negativos.</p>
+            </div>
+            <div class="card">
+                <h4>Jogo B</h4>
+                <p>Análise de gameplay e gráficos.</p>
+            </div>
+            <div class="card">
+                <h4>Jogo C</h4>
+                <p>Vale a pena jogar? Veja nossa opinião.</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer id="contato">
+    <p>© 2026 LevelUp Hub - Todos os direitos reservados</p>
+</footer>
+
+<script>
+    // Seleciona todos os elementos com a classe 'card' na página
+    const todosOsCards = document.querySelectorAll('.card');
+
+    // Cria uma ação de clique para cada card encontrado
+    todosOsCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Descobre o título (h4) de dentro do card que foi clicado
+            const titulo = card.querySelector('h4').textContent;
+            
+            // Exibe um alerta simulando a abertura do post
+            alert(`Abrindo a página de: "${titulo}"`);
+            
+            /* DICA: No futuro, se quiser mandar o usuário para outra página real, 
+               você pode substituir o alert acima por algo como:
+               window.location.href = "sua-pagina.html";
+            */
+        });
+    });
+</script>
+
+</body>
+</html>
