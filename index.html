@@ -1,285 +1,96 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LevelUp Hub - Game News</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GameZone - Site de Jogos</title>
 
-<style>
-/* Reset e Configurações Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      text-align: center;
+    }
 
-html {
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links */
-}
-
-body {
-    background: #0b0f1a;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-/* Menu de Navegação */
-header {
-    background: #111827;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #7c3aed;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header h1 {
-    color: #7c3aed;
-    font-size: 24px;
-}
-
-nav a {
-    color: #cbd5e1;
-    margin-left: 15px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-/* Classe ativada via JavaScript quando a opção é selecionada */
-nav a.active, nav a:hover {
-    color: #fff;
-    background: #7c3aed;
-}
-
-/* Banner Principal (Hero) */
-.hero {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #111827, #1f2937);
-}
-
-.hero h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #cbd5e1;
-}
-
-/* Seções de Conteúdo */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.section {
-    padding: 60px 0;
-}
-
-.section h3 {
-    margin-bottom: 20px;
-    color: #7c3aed;
-    font-size: 22px;
-}
-
-/* Grid de Opções (Cards) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #1f2937;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #7c3aed;
-    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
-}
-
-.card h4 {
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.card p {
-    color: #cbd5e1;
-    font-size: 14px;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #1f2937;
-    color: #94a3b8;
-    margin-top: 40px;
-    background: #111827;
-}
-
-/* Responsividade Básica */
-@media (max-width: 600px) {
     header {
-        flex-direction: column;
-        gap: 15px;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      font-size: 24px;
+      font-weight: bold;
     }
-    nav a {
-        margin: 0 5px;
+
+    .container {
+      padding: 40px;
     }
-}
-</style>
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      background: #00c6ff;
+      color: black;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #0072ff;
+      color: white;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>LevelUp Hub 🎮</h1>
-    <nav id="menu">
-        <a href="#" class="active">Início</a>
-        <a href="#noticias">Notícias</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contato">Contato</a>
-    </nav>
+  🎮 GameZone - Seu Site de Jogos
 </header>
-
-<section class="hero">
-    <h2>Bem-vindo ao LevelUp Hub</h2>
-    <p>Seu portal de notícias, reviews e rankings do mundo dos games</p>
-</section>
 
 <div class="container">
 
-    <section id="noticias" class="section">
-        <h3>🔥 Últimas Notícias</h3>
-        <div class="grid">
-            <div class="card" data-destino="noticia-1">
-                <h4>Novo update em jogos populares</h4>
-                <p>Veja as novidades mais recentes do mundo dos games.</p>
-            </div>
-            <div class="card" data-destino="noticia-2">
-                <h4>Evento de eSports anunciado</h4>
-                <p>Grandes torneios chegando nesta temporada.</p>
-            </div>
-            <div class="card" data-destino="noticia-3">
-                <h4>Lançamentos da semana</h4>
-                <p>Confira os jogos que acabaram de sair.</p>
-            </div>
-        </div>
-    </section>
+  <div class="card">
+    <h2>Mini Jogo: Clique Rápido</h2>
+    <p>Pontos: <span id="score">0</span></p>
+    <button onclick="addPoint()">Clique aqui!</button>
+  </div>
 
-    <section id="reviews" class="section">
-        <h3>⭐ Reviews em destaque</h3>
-        <div class="grid">
-            <div class="card" data-destino="review-a">
-                <h4>Jogo A</h4>
-                <p>Avaliação completa com pontos positivos e negativos.</p>
-            </div>
-            <div class="card" data-destino="review-b">
-                <h4>Jogo B</h4>
-                <p>Análise de gameplay e gráficos.</p>
-            </div>
-            <div class="card" data-destino="review-c">
-                <h4>Jogo C</h4>
-                <p>Vale a pena jogar? Veja nossa opinião.</p>
-            </div>
-        </div>
-    </section>
+  <div class="card">
+    <h2>Sobre o site</h2>
+    <p>Este é um site simples de jogos criado com HTML, CSS e JavaScript.</p>
+  </div>
 
 </div>
 
-<footer id="contato">
-    <p>© 2026 LevelUp Hub - Todos os direitos reservados</p>
+<footer>
+  © 2026 GameZone - Todos os direitos reservados
 </footer>
 
 <script>
-    // 1. Gerenciamento do Menu (Mudar a cor da opção ativa ao clicar)
-    const linksMenu = document.querySelectorAll('#menu a');
+  let score = 0;
 
-    linksMenu.forEach(link => {
-        link.addEventListener('click', function() {
-            // Remove a classe 'active' de todos os links
-            linksMenu.forEach(l => l.classList.remove('active'));
-            // Adiciona a classe 'active' apenas no que foi clicado
-            this.classList.add('active');
-        });
-    });
-
-    // 2. Gerenciamento dos Cards (Entrar nas opções ao clicar)
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Obtém o título interno da opção
-            const nomeOpcao = this.querySelector('h4').innerText;
-            // Obtém o identificador exclusivo (data-destino) do card
-            const destino = this.getAttribute('data-destino');
-            
-            // Mensagem no navegador simulando a entrada na opção
-            alert(`Você escolheu entrar na opção: \n👉 ${nomeOpcao} \n(ID interno: ${destino})`);
-            
-            /* Para redirecionar para uma página real no futuro, remova o alert acima 
-               e use a linha abaixo (criando um arquivo chamado "conteudo.html"):
-               
-               window.location.href = `conteudo.html?id=${destino}`;
-            */
-        });
-    });
+  function addPoint() {
+    score++;
+    document.getElementById("score").innerText = score;
+  }
 </script>
 
-</body>
-</html>
-eitz
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>LevelUp Hub - Conteúdo</title>
-    <style>
-        body { background: #0b0f1a; color: #fff; font-family: sans-serif; padding: 40px; text-align: center; }
-        h1 { color: #7c3aed; }
-        a { color: #cbd5e1; text-decoration: none; display: inline-block; margin-top: 20px; }
-    </style>
-</head>
-<body>
-    <h1 id="titulo-pagina">Carregando...</h1>
-    <p id="conteudo-pagina">Buscando as informações do jogo...</p>
-    <a href="index.html">← Voltar para o Início</a>
-
-    <script>
-        // Pega o ID enviado pela URL (ex: ?id=noticia-1)
-        const urlParams = new URLSearchParams(window.location.search);
-        const idDestino = urlParams.get('id');
-
-        const titulo = document.getElementById('titulo-pagina');
-        const conteudo = document.getElementById('conteudo-pagina');
-
-        // Altera o texto da página dependendo do card que foi clicado
-        if (idDestino === 'noticia-1') {
-            titulo.innerText = "Novo update em jogos populares";
-            conteudo.innerText = "Aqui vai o texto completo sobre a nova atualização bombástica dos servidores...";
-        } else if (idDestino === 'review-a') {
-            titulo.innerText = "Review: Jogo A";
-            conteudo.innerText = "Nossa análise detalhada do Jogo A. Gráficos 10/10, mas a história deixou a desejar.";
-        } else {
-            titulo.innerText = "Conteúdo não encontrado";
-            conteudo.innerText = "Escolha uma opção válida na página inicial.";
-        }
-    </script>
 </body>
 </html>
