@@ -245,3 +245,41 @@ footer {
 </body>
 </html>
 eitz
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>LevelUp Hub - Conteúdo</title>
+    <style>
+        body { background: #0b0f1a; color: #fff; font-family: sans-serif; padding: 40px; text-align: center; }
+        h1 { color: #7c3aed; }
+        a { color: #cbd5e1; text-decoration: none; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1 id="titulo-pagina">Carregando...</h1>
+    <p id="conteudo-pagina">Buscando as informações do jogo...</p>
+    <a href="index.html">← Voltar para o Início</a>
+
+    <script>
+        // Pega o ID enviado pela URL (ex: ?id=noticia-1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const idDestino = urlParams.get('id');
+
+        const titulo = document.getElementById('titulo-pagina');
+        const conteudo = document.getElementById('conteudo-pagina');
+
+        // Altera o texto da página dependendo do card que foi clicado
+        if (idDestino === 'noticia-1') {
+            titulo.innerText = "Novo update em jogos populares";
+            conteudo.innerText = "Aqui vai o texto completo sobre a nova atualização bombástica dos servidores...";
+        } else if (idDestino === 'review-a') {
+            titulo.innerText = "Review: Jogo A";
+            conteudo.innerText = "Nossa análise detalhada do Jogo A. Gráficos 10/10, mas a história deixou a desejar.";
+        } else {
+            titulo.innerText = "Conteúdo não encontrado";
+            conteudo.innerText = "Escolha uma opção válida na página inicial.";
+        }
+    </script>
+</body>
+</html>
